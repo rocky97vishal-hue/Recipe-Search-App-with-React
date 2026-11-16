@@ -1,0 +1,32 @@
+/* Reset defaults to prevent accidental overflow scrollbars */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* 
+  Target the React root wrapper. 
+  Using 100dvh prevents issues with shifting mobile address bars.
+*/
+#root, .app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh; 
+}
+
+/* 
+  The main content expands to fill all empty space, 
+  perfectly pushing the footer down.
+*/
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keeps the footer structurally intact */
+footer {
+  flex-shrink: 0;
+}
+
